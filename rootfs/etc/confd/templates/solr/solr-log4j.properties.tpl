@@ -1,11 +1,12 @@
 #  Logging level
-log4j.rootLogger={{getv "/solr/root/logger"}}, stdout
-
-# add a ConsoleAppender to the logger stdout to write to the console
-log4j.appender.stdout=org.apache.log4j.ConsoleAppender
-log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
-# use a simple message format
-log4j.appender.stdout.layout.ConversionPattern=%-5p - %d{yyyy-MM-dd HH:mm:ss.SSS}; %C; %m\n
+log4j.rootCategory={{getv "/solr/root/logger"}},console
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.target=System.out
+log4j.appender.console.immediateFlush=true
+log4j.appender.console.encoding=UTF-8
+  
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+log4j.appender.console.layout.conversionPattern=%-5p - %d{yyyy-MM-dd HH:mm:ss.SSS}; %C; %m\n
 
 log4j.logger.org.apache.zookeeper={{getv "/solr/org/apache/zookeeper/log"}}
 log4j.logger.org.apache.hadoop={{getv "/solr/org/apache/hadoop/log"}}
