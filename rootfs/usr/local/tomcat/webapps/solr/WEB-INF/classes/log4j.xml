@@ -9,19 +9,19 @@
     </layout>
   </appender>
   <logger name="org.apache.zookeeper" additivity="false">
-    <level value="{{getv "/solr/org/apache/zookeeper/log"}}" />
+    <level value="WARN" />
     <appender-ref ref="STDOUT"/>
   </logger>
   <logger name="org.apache.hadoop" additivity="false">
-    <level value="{{getv "/solr/org/apache/hadoop/log"}}" />
+    <level value="WARN" />
     <appender-ref ref="STDOUT"/>
   </logger>
   <logger name="org.apache.solr.update.LoggingInfoStream" additivity="false">
-    <level value="{{getv "/solr/org/apache/solr/update/logginginforstream"}}" />
+    <level value="OFF" />
     <appender-ref ref="STDOUT"/>
   </logger>
   <root>
-    <level value="{{getv "/solr/root/logger"}}" />
+    <level value="INFO" />
     <appender-ref ref="STDOUT"/>
   </root>
 </log4j:configuration>
