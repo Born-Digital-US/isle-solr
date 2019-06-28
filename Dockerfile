@@ -1,4 +1,4 @@
-FROM islandoracollabgroup/isle-tomcat:1.1.2.dev
+FROM islandoracollabgroup/isle-tomcat:1.1.2
 
 ENV SOLR_HOME=/usr/local/solr \
     SOLR_VERSION=4.10.4 \
