@@ -1,5 +1,8 @@
-FROM islandoracollabgroup/isle-tomcat:1.4.0
+# FROM islandoracollabgroup/isle-tomcat:1.4.0
+FROM borndigital/isle-tomcat:1.4.1-dev
 
+## Environment Solr
+# @see: Solr http://archive.apache.org/dist/lucene/solr (held at 4.10.4)
 ENV SOLR_HOME=/usr/local/solr \
     SOLR_VERSION=4.10.4 \
     CATALINA_BASE=/usr/local/tomcat \
@@ -8,8 +11,8 @@ ENV SOLR_HOME=/usr/local/solr \
     ## Per Gavin, we are no longer using -XX:+UseConcMarkSweepGC, instead G1GC.
     JAVA_OPTS='-Djava.awt.headless=true -server -Xmx${JAVA_MAX_MEM} -Xms${JAVA_MIN_MEM} -XX:+UseG1GC -XX:+UseStringDeduplication -XX:MaxGCPauseMillis=200 -XX:InitiatingHeapOccupancyPercent=70 -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Addresses=true'
 
-###
 # Solr Installation
+# @ see DG Basic-solr-config https://github.com/discoverygarden/basic-solr-config.git
 RUN mkdir -p $SOLR_HOME && \
     cd /tmp && \
     git clone -b 4.10.x https://github.com/discoverygarden/basic-solr-config.git && \
