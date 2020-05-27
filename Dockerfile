@@ -1,4 +1,5 @@
-FROM islandoracollabgroup/isle-tomcat:1.4.2
+FROM islandoracollabgroup/isle-tomcat:1.5.0
+
 
 ## Environment Solr
 # @see: Solr http://archive.apache.org/dist/lucene/solr (held at 4.10.4)
