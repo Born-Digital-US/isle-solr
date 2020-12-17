@@ -1,5 +1,5 @@
 #FROM islandoracollabgroup/isle-tomcat:1.5.3
-FROM borndigital/isle-tomcat:1.5.3-dev
+FROM borndigital/isle-tomcat:1.5.3
 
 ## Environment Solr
 # @see: Solr http://archive.apache.org/dist/lucene/solr (held at 4.10.4)
